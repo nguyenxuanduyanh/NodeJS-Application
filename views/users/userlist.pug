@@ -1,0 +1,22 @@
+extends ../layout/common
+block content
+    h1 Userlist
+    form(action="userlist/searchuser",method="GET",class='d-flex')
+        input(type="text", name='q',class="form-control ") 
+        button(class='btn-primary') Search
+    table.table
+        tr
+            th Name
+            th Phone
+            th Action
+    
+        each user in users
+            tr
+                td= user.name
+                td=user.phone 
+                td
+                    a(href='/userlist/'+user.id) View
+
+
+
+    a.btn.btn-primary(href="userlist/createuser") Click to create user
