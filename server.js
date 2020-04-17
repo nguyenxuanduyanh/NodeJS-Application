@@ -3,6 +3,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const userRoute = require('./routes/user.route')
 const authRoute = require('./routes/auth.route')
+const productRoute = require('./routes/product.route')
 const app = express()
 const authMiddleware = require('./middlewares/auth.middleware')
 const cookieParser = require('cookie-parser')
@@ -22,8 +23,8 @@ app.get('/', function(req, res) {
 })
 app.use('/userlist', authMiddleware.requireAuth, userRoute)
 app.use('/auth', authRoute)
+app.use('/products', productRoute)
 
 app.listen(port, function() {
     console.log('In Progress')
 })
-
