@@ -2,8 +2,6 @@ html
     head 
         link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
         link(rel="stylesheet", href="/styles/custom.css")
-        script
-            include ../products/pagination.js
     body
         nav.navbar.navbar-expand-lg.navbar-light.bg-light
             a.navbar-brand(href='#') Duy Anh API
@@ -19,6 +17,8 @@ html
                         a.nav-link(href='/userlist') User
                     li.nav-item
                     a.nav-link(href='/products') Product
+                    li.nav-item
+                    a.nav-link(href='/products') Cart
             if user
                 p=user.name 
     block content
